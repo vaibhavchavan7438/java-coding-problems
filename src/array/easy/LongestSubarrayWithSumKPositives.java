@@ -16,8 +16,10 @@ public class LongestSubarrayWithSumKPositives {
             currSum+=nums[right];
             if(currSum==k){
                 max=Math.max(right-left+1,max);
-            } else if (currSum>k) {
-                currSum-=nums[left];
+            }
+
+            while (currSum > k) {
+                currSum -= nums[left];
                 left++;
             }
         }
